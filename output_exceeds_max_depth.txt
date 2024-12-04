@@ -1,0 +1,8 @@
+Machine Name: {w | w has the same number of 0's and 1's} Nondeterministic
+Input String: 010101010101010101_
+Exceeded MAX_DEPTH of 100 and execution was stopped.
+
+Depth of tree of configurations: 101
+Total number of transitions: 146
+Average nondeterminism: 1.4455445544554455
+

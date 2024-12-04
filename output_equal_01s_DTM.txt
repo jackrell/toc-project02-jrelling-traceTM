@@ -1,0 +1,51 @@
+Machine Name: {w | w has the same number of 0's and 1's} Deterministic
+Input String: 000111_
+
+String accepted in 31 steps
+C1   q0 0 00111_
+C2  _ q1 0 0111_
+C3  _0 q1 0 111_
+C4  _00 q1 1 11_
+C5  _0 q3 0 x11_
+C6  _ q3 0 0x11_
+C7   q3 _ 00x11_
+C8  _ q4 0 0x11_
+C9  _x q1 0 x11_
+C10  _x0 q1 x 11_
+C11  _x0x q1 1 1_
+C12  _x0 q3 x x1_
+C13  _x q3 0 xx1_
+C14  _ q3 x 0xx1_
+C15   q3 _ x0xx1_
+C16  _ q4 x 0xx1_
+C17  _x q4 0 xx1_
+C18  _xx q1 x x1_
+C19  _xxx q1 x 1_
+C20  _xxxx q1 1 _
+C21  _xxx q3 x x_
+C22  _xx q3 x xx_
+C23  _x q3 x xxx_
+C24  _ q3 x xxxx_
+C25   q3 _ xxxxx_
+C26  _ q4 x xxxx_
+C27  _x q4 x xxx_
+C28  _xx q4 x xx_
+C29  _xxx q4 x x_
+C30  _xxxx q4 x _
+C31  _xxxxx q4 _ 
+C32  _xxxxx_ qacc _ 
+
+Depth of tree of configurations: 31
+Total number of transitions: 31
+Average nondeterminism: 1.0
+
+--------------------
+
+Machine Name: {w | w has the same number of 0's and 1's} Deterministic
+Input String: 00011_
+String rejected in 20 steps
+
+Depth of tree of configurations: 20
+Total number of transitions: 19
+Average nondeterminism: 0.95
+

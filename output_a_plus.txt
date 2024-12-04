@@ -1,0 +1,22 @@
+Machine Name: a plus
+Input String: aaa_
+
+String accepted in 4 steps
+C1   q1 a aa_
+C2  a q1 a a_
+C3  aa q1 a _
+C4  aaa q2 _ 
+C5  aa q3 a _
+
+Depth of tree of configurations: 4
+Total number of transitions: 7
+Average nondeterminism: 1.75
+
+Machine Name: a plus
+Input String: _
+String rejected in 1 steps
+
+Depth of tree of configurations: 1
+Total number of transitions: 0
+Average nondeterminism: 0.0
+

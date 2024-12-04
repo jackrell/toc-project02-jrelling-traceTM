@@ -1,0 +1,88 @@
+Machine Name: {w | w has the same number of 0's and 1's} Nondeterministic
+Input String: 00011_
+String rejected in 20 steps
+
+Depth of tree of configurations: 20
+Total number of transitions: 22
+Average nondeterminism: 1.1
+
+-------------------
+
+Machine Name: {w | w has the same number of 0's and 1's} Nondeterministic
+Input String: 000111_
+
+String accepted in 31 steps
+C1   q0 0 00111_
+C2  _ q1 0 0111_
+C3  _0 q1 0 111_
+C4  _00 q1 1 11_
+C5  _0 q3 0 x11_
+C6  _ q3 0 0x11_
+C7   q3 _ 00x11_
+C8  _ q4 0 0x11_
+C9  _x q1 0 x11_
+C10  _x0 q1 x 11_
+C11  _x0x q1 1 1_
+C12  _x0 q3 x x1_
+C13  _x q3 0 xx1_
+C14  _ q3 x 0xx1_
+C15   q3 _ x0xx1_
+C16  _ q4 x 0xx1_
+C17  _x q4 0 xx1_
+C18  _xx q1 x x1_
+C19  _xxx q1 x 1_
+C20  _xxxx q1 1 _
+C21  _xxx q3 x x_
+C22  _xx q3 x xx_
+C23  _x q3 x xxx_
+C24  _ q3 x xxxx_
+C25   q3 _ xxxxx_
+C26  _ q5 x xxxx_
+C27  _x q5 x xxx_
+C28  _xx q5 x xx_
+C29  _xxx q5 x x_
+C30  _xxxx q5 x _
+C31  _xxxxx q5 _ 
+C32  _xxxxx_ qacc _ 
+
+Depth of tree of configurations: 31
+Total number of transitions: 41
+Average nondeterminism: 1.3225806451612903
+
+-------------------
+
+Machine Name: {w | w has the same number of 0's and 1's} Nondeterministic
+Input String: 010101_
+
+String accepted in 25 steps
+C1   q0 0 10101_
+C2  _ q1 1 0101_
+C3   q3 _ x0101_
+C4  _ q4 x 0101_
+C5  _x q4 0 101_
+C6  _xx q1 1 01_
+C7  _x q3 x x01_
+C8  _ q3 x xx01_
+C9   q3 _ xxx01_
+C10  _ q4 x xx01_
+C11  _x q4 x x01_
+C12  _xx q4 x 01_
+C13  _xxx q4 0 1_
+C14  _xxxx q1 1 _
+C15  _xxx q3 x x_
+C16  _xx q3 x xx_
+C17  _x q3 x xxx_
+C18  _ q3 x xxxx_
+C19   q3 _ xxxxx_
+C20  _ q5 x xxxx_
+C21  _x q5 x xxx_
+C22  _xx q5 x xx_
+C23  _xxx q5 x x_
+C24  _xxxx q5 x _
+C25  _xxxxx q5 _ 
+C26  _xxxxx_ qacc _ 
+
+Depth of tree of configurations: 25
+Total number of transitions: 38
+Average nondeterminism: 1.52
+

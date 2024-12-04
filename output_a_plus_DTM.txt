@@ -1,0 +1,14 @@
+Machine Name: a plus DTM
+Input String: aaa_
+
+String accepted in 4 steps
+C1   q1 a aa_
+C2  a q1 a a_
+C3  aa q1 a _
+C4  aaa q1 _ 
+C5  aaaa q2 _ 
+
+Depth of tree of configurations: 4
+Total number of transitions: 4
+Average nondeterminism: 1.0
+

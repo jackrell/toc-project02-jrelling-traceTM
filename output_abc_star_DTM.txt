@@ -1,0 +1,20 @@
+Machine Name: a*b*c* Deterministic
+Input String: aaabbbccc_
+
+String accepted in 10 steps
+C1   q0 a aabbbccc_
+C2  a q1 a abbbccc_
+C3  aa q1 a bbbccc_
+C4  aaa q1 b bbccc_
+C5  aaab q2 b bccc_
+C6  aaabb q2 b ccc_
+C7  aaabbb q2 c cc_
+C8  aaabbbc q3 c c_
+C9  aaabbbcc q3 c _
+C10  aaabbbccc q3 _ 
+C11  aaabbbccc_ qacc _ 
+
+Depth of tree of configurations: 10
+Total number of transitions: 10
+Average nondeterminism: 1.0
+

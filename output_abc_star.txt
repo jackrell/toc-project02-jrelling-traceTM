@@ -1,0 +1,54 @@
+Machine Name: a*b*c* Nondeterministic
+Input String: _
+
+String accepted in 2 steps
+C1   q0 _ 
+C2  _ q3 _ 
+C3  __ qacc _ 
+
+Depth of tree of configurations: 2
+Total number of transitions: 2
+Average nondeterminism: 1.0
+
+--------------------
+
+Machine Name: a*b*c* Nondeterministic
+Input String: abcabc_
+String rejected in 4 steps
+
+Depth of tree of configurations: 4
+Total number of transitions: 14
+Average nondeterminism: 3.5
+
+--------------------
+
+Machine Name: a*b*c* Nondeterministic
+Input String: abcd_
+String rejected in 4 steps
+
+Depth of tree of configurations: 4
+Total number of transitions: 14
+Average nondeterminism: 3.5
+
+--------------------
+
+Machine Name: a*b*c* Nondeterministic
+Input String: aaabbbccc_
+
+String accepted in 10 steps
+C1   q0 a aabbbccc_
+C2  a q0 a abbbccc_
+C3  aa q0 a bbbccc_
+C4  aaa q0 b bbccc_
+C5  aaab q1 b bccc_
+C6  aaabb q1 b ccc_
+C7  aaabbb q2 c cc_
+C8  aaabbbc q2 c c_
+C9  aaabbbcc q2 c _
+C10  aaabbbccc q3 _ 
+C11  aaabbbccc_ qacc _ 
+
+Depth of tree of configurations: 10
+Total number of transitions: 44
+Average nondeterminism: 4.4
+
