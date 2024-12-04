@@ -4,7 +4,7 @@
 import sys
 import csv
 
-MAX_DEPTH = 100
+MAX_DEPTH = 100 # default depth
 
 # Functions
 def usage(exit_status: int=0) -> None:
@@ -15,13 +15,16 @@ def usage(exit_status: int=0) -> None:
 
 def run_tm(start_state, string, transitions, accept_state):
     ''' runs the tm on the input string '''
+    # initialize tree to hold levels
     depth = 0
     start_config = [["", start_state, string], None] # second value to keep track of parent config
     tree = [[start_config]]
     
+    # initialize flags
     accepted = 0
     exceeded_depth = 0
-
+    
+    # want to know the final config that ends in an accept state
     final_config = []
     
     while 1:
@@ -44,6 +47,7 @@ def run_tm(start_state, string, transitions, accept_state):
                     new_symbol = transition[3]
                     movement = transition[4] 
                     
+                    # moving right or left, manipulate tape strings
                     if movement == 'R':
                         new_config = [[config[0][0] + new_symbol, new_state, config[0][2][1:]], config[0]]
                         if new_config[0][2] == "":
@@ -54,6 +58,7 @@ def run_tm(start_state, string, transitions, accept_state):
                     new_level.append(new_config)
                     num_configs+=1
         
+        # conditions to stop execution
         if accepted:
             break
         if depth > MAX_DEPTH:
@@ -67,13 +72,13 @@ def run_tm(start_state, string, transitions, accept_state):
         depth+=1
         tree.append(new_level)
     
+    
+    # printing output
 
     if accepted:
         print()
         print('String accepted in', depth, 'steps')
         config_print(tree, final_config)
-
-
 
     total_transitions = 0
     for d, level in enumerate(tree, start=1):
@@ -88,10 +93,10 @@ def run_tm(start_state, string, transitions, accept_state):
     print('Total number of transitions:', total_transitions)
     print('Average nondeterminism:', total_transitions/depth)
     print()
-    
 
- 
+
 def config_print(tree, final_config):
+    ''' prints out the accepting configuration path by tracing back through parents '''
     c = final_config
     config_list = []
     for level in tree[::-1]:
@@ -104,10 +109,10 @@ def config_print(tree, final_config):
 
 
 
-
-
 def main(arguments=sys.argv[1:]) -> None:
     ''' Reads arguments and runs the machine '''
+
+    # reading in arguments
     if len(arguments) != 2:
         if len(arguments) == 1 and arguments[0] == "-h":
             usage(0)
@@ -120,7 +125,7 @@ def main(arguments=sys.argv[1:]) -> None:
     tmfile = arguments[0]
     string = arguments[1] if arguments[1].endswith('_') else arguments[1] + '_'
 
-    # extracting information about machine
+    # extracting information about machine, echoing initial machine and input string
     transitions = []
     start_state, accept_state, reject_state = '', '', ''
     with open(tmfile, 'r') as f:
