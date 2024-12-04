@@ -86,6 +86,7 @@ def run_tm(start_state, string, transitions, accept_state):
     print()
     print('Depth of tree of configurations:', depth)
     print('Total number of transitions:', total_transitions)
+    print('Average nondeterminism:', total_transitions/depth)
     print()
     
 
